@@ -5,6 +5,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
+import lab.chevalier.moviedb.worker.MovieAllWorker
 
 @Database(entities = [Result::class], version = 1, exportSchema = false)
 abstract class MovieDB : RoomDatabase() {
@@ -26,10 +29,11 @@ abstract class MovieDB : RoomDatabase() {
                 .addCallback(object : RoomDatabase.Callback(){
                     override fun onCreate(db: SupportSQLiteDatabase) {
                         super.onCreate(db)
+                        val request = OneTimeWorkRequestBuilder<MovieAllWorker>().build()
+                        WorkManager.getInstance().enqueue(request)
                     }
                 }).build()
         }
-
     }
 
 }
