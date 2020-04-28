@@ -7,13 +7,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import lab.chevalier.moviedb.R
-import lab.chevalier.moviedb.api.response.Result
+import lab.chevalier.moviedb.database.Movie
 import lab.chevalier.moviedb.databinding.ItemMovieBinding
 import lab.chevalier.moviedb.utilities.Constanta
 
 class MovieAllAdapter(val context: Context) : RecyclerView.Adapter<MovieAllAdapter.MovieViewHolder>() {
 
-    var listData = mutableListOf<Result>()
+    var listData = mutableListOf<Movie>()
         set(value) {
             listData.clear()
             field = value
@@ -21,7 +21,7 @@ class MovieAllAdapter(val context: Context) : RecyclerView.Adapter<MovieAllAdapt
         }
 
     inner class MovieViewHolder(val binding: ItemMovieBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(data : Result){
+        fun bind(data : Movie){
             binding.tvTitle.text = data.originalTitle
             binding.tvOverview.text = data.overview
             Glide.with(context)

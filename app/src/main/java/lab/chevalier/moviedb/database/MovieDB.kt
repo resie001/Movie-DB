@@ -9,7 +9,7 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import lab.chevalier.moviedb.worker.MovieAllWorker
 
-@Database(entities = [Result::class], version = 1, exportSchema = false)
+@Database(entities = [Movie::class], version = 1, exportSchema = false)
 abstract class MovieDB : RoomDatabase() {
 
     abstract fun movieDao() : MovieDao

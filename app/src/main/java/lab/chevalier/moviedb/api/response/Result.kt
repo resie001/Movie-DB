@@ -1,21 +1,15 @@
 package lab.chevalier.moviedb.api.response
 
-
-import androidx.room.Entity
-import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import lab.chevalier.moviedb.database.Movie
 
-@Entity(tableName = "tbl_movie")
 @JsonClass(generateAdapter = true)
 data class Result(
     @Json(name = "adult")
     val adult: Boolean = false,
     @Json(name = "backdrop_path")
     val backdropPath: String? = "",
-    @Json(name = "genre_ids")
-    val genreIds: List<Int> = listOf(),
-    @PrimaryKey(autoGenerate = false)
     @Json(name = "id")
     val id: Int = 0,
     @Json(name = "original_language")
@@ -36,4 +30,19 @@ data class Result(
     val voteAverage: Int = 0,
     @Json(name = "vote_count")
     val voteCount: Int = 0
-)
+) {
+    fun toMovie() = Movie(
+        adult = adult,
+        backdropPath = backdropPath,
+        id = id,
+        originalLanguage = originalLanguage,
+        originalTitle = originalTitle,
+        overview = overview,
+        popularity = popularity,
+        posterPath = posterPath,
+        title = title,
+        video = video,
+        voteAverage = voteAverage,
+        voteCount = voteCount
+    )
+}
