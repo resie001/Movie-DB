@@ -36,10 +36,8 @@ class MovieAllWorker(
                         }
                     }
                 })
-
             val database = MovieDB.getInstance(applicationContext)
-            database.movieDao().insertAll(listData)
-
+            if (listData.size != 0) database.movieDao().insertAll(listData)
             Result.success()
         } catch (ex: Exception) {
             Log.e("MovieAllWorker", ex.toString())
