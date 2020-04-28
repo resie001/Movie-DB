@@ -7,8 +7,7 @@ import androidx.work.WorkerParameters
 import kotlinx.coroutines.coroutineScope
 import lab.chevalier.moviedb.api.BaseApi
 import lab.chevalier.moviedb.api.response.GetAllMoviePopularResponses
-import lab.chevalier.moviedb.api.response.Result
-import lab.chevalier.moviedb.data.Constanta
+import lab.chevalier.moviedb.utilities.Constanta
 import lab.chevalier.moviedb.database.MovieDB
 import retrofit2.Call
 import retrofit2.Callback

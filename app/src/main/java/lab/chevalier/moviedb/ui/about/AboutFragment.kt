@@ -1,4 +1,4 @@
-package lab.chevalier.moviedb.ui
+package lab.chevalier.moviedb.ui.about
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,4 +1,4 @@
-package lab.chevalier.moviedb.data
+package lab.chevalier.moviedb.utilities
 
 object Constanta {
 

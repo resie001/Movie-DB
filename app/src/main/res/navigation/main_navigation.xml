@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="lab.chevalier.moviedb.ui.HomeFragment"
+        android:name="lab.chevalier.moviedb.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -16,12 +16,12 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="lab.chevalier.moviedb.ui.DetailFragment"
+        android:name="lab.chevalier.moviedb.ui.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" />
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="lab.chevalier.moviedb.ui.AboutFragment"
+        android:name="lab.chevalier.moviedb.ui.about.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
 </navigation>
