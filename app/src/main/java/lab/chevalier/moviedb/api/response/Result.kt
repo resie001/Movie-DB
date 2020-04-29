@@ -30,19 +30,4 @@ data class Result(
     val voteAverage: Int = 0,
     @Json(name = "vote_count")
     val voteCount: Int = 0
-) {
-    fun toMovie() = Movie(
-        adult = adult,
-        backdropPath = backdropPath,
-        id = id,
-        originalLanguage = originalLanguage,
-        originalTitle = originalTitle,
-        overview = overview,
-        popularity = popularity,
-        posterPath = posterPath,
-        title = title,
-        video = video,
-        voteAverage = voteAverage,
-        voteCount = voteCount
-    )
-}
+)

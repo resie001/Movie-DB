@@ -13,12 +13,7 @@ import lab.chevalier.moviedb.utilities.Constanta
 
 class MovieAllAdapter(val context: Context) : RecyclerView.Adapter<MovieAllAdapter.MovieViewHolder>() {
 
-    var listData = mutableListOf<Movie>()
-        set(value) {
-            listData.clear()
-            field = value
-            notifyDataSetChanged()
-        }
+    var listData : List<Movie> = mutableListOf()
 
     inner class MovieViewHolder(val binding: ItemMovieBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(data : Movie){

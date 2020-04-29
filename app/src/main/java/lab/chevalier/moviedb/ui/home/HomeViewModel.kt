@@ -1,6 +1,7 @@
 package lab.chevalier.moviedb.ui.home
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import lab.chevalier.moviedb.database.Movie
 import lab.chevalier.moviedb.repository.HomeRepository
@@ -8,6 +9,7 @@ import lab.chevalier.moviedb.repository.HomeRepository
 class HomeViewModel internal constructor(
     homeRepository: HomeRepository
 ) : ViewModel() {
+
 
     val movies : LiveData<List<Movie>> = homeRepository.getAllMovie()
 

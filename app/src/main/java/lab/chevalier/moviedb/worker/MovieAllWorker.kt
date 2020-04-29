@@ -10,6 +10,7 @@ import lab.chevalier.moviedb.api.response.GetAllMoviePopularResponses
 import lab.chevalier.moviedb.database.Movie
 import lab.chevalier.moviedb.utilities.Constanta
 import lab.chevalier.moviedb.database.MovieDB
+import lab.chevalier.moviedb.utilities.Converter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -39,9 +40,10 @@ class MovieAllWorker(
                     }
                 })
             for (item in listData){
-                listMovie.add(item.toMovie())
+                listMovie.add(Converter.toMovie(item))
             }
             val database = MovieDB.getInstance(applicationContext)
+            Log.e("MovieAllWorker", listMovie.toString())
             if (listMovie.size != 0) database.movieDao().insertAll(listMovie)
             Result.success()
         } catch (ex: Exception) {
