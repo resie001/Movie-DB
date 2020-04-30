@@ -24,7 +24,9 @@
                 tools:text="Judul Movie"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:layout_toEndOf="@id/img_poster"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp"
+                android:maxLines="2"
+                android:ellipsize="end"/>
 
             <TextView
                 android:id="@+id/tv_overview"
