@@ -26,7 +26,9 @@
             app:layout_constraintTop_toTopOf="@+id/img_poster"
             tools:text="Judul"
             android:layout_marginStart="16dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:maxLines="2"
+            android:ellipsize="end"/>
 
         <TextView
             android:id="@+id/tv_date"
@@ -41,7 +43,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tv_id"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             tools:text="ID"
@@ -123,7 +125,7 @@
                     android:text="@string/popularity"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/popularity" />
+                    app:layout_constraintTop_toTopOf="@+id/tv_popularity" />
 
                 <TextView
                     android:id="@+id/textView8"
@@ -154,46 +156,51 @@
                     android:id="@+id/tv_original_title"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    tools:text="@tools:sample/lorem"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@tools:sample/lorem" />
 
                 <TextView
                     android:id="@+id/tv_original_language"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    tools:text="@tools:sample/lorem"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_original_title" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_original_title"
+                    tools:text="@tools:sample/lorem" />
 
                 <TextView
-                    android:id="@+id/popularity"
+                    android:id="@+id/tv_popularity"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    tools:text="@tools:sample/lorem"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_original_language" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_original_language"
+                    tools:text="@tools:sample/lorem" />
 
                 <TextView
                     android:id="@+id/tv_adult"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    tools:text="@tools:sample/lorem"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
-                    app:layout_constraintTop_toBottomOf="@+id/popularity" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_popularity"
+                    tools:text="@tools:sample/lorem" />
 
                 <TextView
                     android:id="@+id/tv_overview"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
