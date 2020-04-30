@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.about.AboutFragment">
+    tools:context=".ui.about.AboutFragment"
+    android:paddingBottom="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/tv_nama"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="@string/ade_resie_muchorobbi_setiawan"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_above="@id/tv_univ"
+        android:layout_marginBottom="16dp"/>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tv_kelas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/d3rpla_42_02"
+        android:textAlignment="center"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_below="@id/tv_univ"/>
+
+    <TextView
+        android:id="@+id/tv_univ"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/telkom_university"
+        android:layout_centerInParent="true"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+</RelativeLayout>
