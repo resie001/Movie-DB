@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import lab.chevalier.moviedb.R
 import lab.chevalier.moviedb.api.response.Result
-import lab.chevalier.moviedb.database.Movie
 import lab.chevalier.moviedb.databinding.ItemMovieBinding
 import lab.chevalier.moviedb.utilities.Constanta
 

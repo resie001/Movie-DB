@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import lab.chevalier.moviedb.R
@@ -49,6 +50,10 @@ class HomeFragment : Fragment() {
             Log.e("HomeFragment Success", it.toString())
             movieAllAdapter.listData = it
         })
+    }
+
+    private fun navigate(){
+
     }
 
 }
