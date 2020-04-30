@@ -5,6 +5,8 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
+import androidx.work.Constraints
+import androidx.work.NetworkType
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import lab.chevalier.moviedb.data.api.response.Result
@@ -34,7 +36,9 @@ abstract class MovieDB : RoomDatabase() {
                 .addCallback(object : RoomDatabase.Callback(){
                     override fun onCreate(db: SupportSQLiteDatabase) {
                         super.onCreate(db)
-                        val request = OneTimeWorkRequestBuilder<MovieAllWorker>().build()
+                        val request = OneTimeWorkRequestBuilder<MovieAllWorker>()
+                            .setConstraints(Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build())
+                            .build()
                         WorkManager.getInstance().enqueue(request)
                     }
                 }).build()
