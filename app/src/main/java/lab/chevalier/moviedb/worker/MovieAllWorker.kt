@@ -5,9 +5,9 @@ import android.util.Log
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import kotlinx.coroutines.coroutineScope
-import lab.chevalier.moviedb.api.BaseApi
+import lab.chevalier.moviedb.data.api.BaseApi
 import lab.chevalier.moviedb.utilities.Constanta
-import lab.chevalier.moviedb.database.MovieDB
+import lab.chevalier.moviedb.data.database.MovieDB
 import java.lang.Exception
 
 class MovieAllWorker(

@@ -12,7 +12,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import lab.chevalier.moviedb.R
 import lab.chevalier.moviedb.adapter.MovieAllAdapter
-import lab.chevalier.moviedb.api.response.Result
+import lab.chevalier.moviedb.data.api.response.Result
 import lab.chevalier.moviedb.databinding.FragmentHomeBinding
 import lab.chevalier.moviedb.utilities.Injectors
 
@@ -50,7 +50,7 @@ class HomeFragment : Fragment() {
         })
     }
 
-    private fun navigate( data : Result ){
+    private fun navigate( data : Result){
         requireView().findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(data))
     }
 

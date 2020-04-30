@@ -1,4 +1,4 @@
-package lab.chevalier.moviedb.api.response
+package lab.chevalier.moviedb.data.api.response
 
 import com.google.gson.annotations.SerializedName
 

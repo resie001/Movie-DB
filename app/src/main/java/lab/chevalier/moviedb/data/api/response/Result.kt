@@ -1,4 +1,4 @@
-package lab.chevalier.moviedb.api.response
+package lab.chevalier.moviedb.data.api.response
 
 import android.os.Parcelable
 import androidx.room.Entity

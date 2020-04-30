@@ -1,4 +1,4 @@
-package lab.chevalier.moviedb.api
+package lab.chevalier.moviedb.data.api
 
 import android.app.Application
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory

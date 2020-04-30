@@ -1,6 +1,6 @@
 package lab.chevalier.moviedb.repository
 
-import lab.chevalier.moviedb.database.MovieDao
+import lab.chevalier.moviedb.data.database.MovieDao
 
 class HomeRepository private constructor(private val movieDao: MovieDao){
 

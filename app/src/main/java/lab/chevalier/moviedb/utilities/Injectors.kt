@@ -2,7 +2,7 @@ package lab.chevalier.moviedb.utilities
 
 import android.content.Context
 import androidx.fragment.app.Fragment
-import lab.chevalier.moviedb.database.MovieDB
+import lab.chevalier.moviedb.data.database.MovieDB
 import lab.chevalier.moviedb.factory.HomeViewModelFactory
 import lab.chevalier.moviedb.repository.HomeRepository
 

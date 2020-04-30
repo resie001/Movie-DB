@@ -1,7 +1,7 @@
-package lab.chevalier.moviedb.api
+package lab.chevalier.moviedb.data.api
 
 import kotlinx.coroutines.Deferred
-import lab.chevalier.moviedb.api.response.GetAllMoviePopularResponses
+import lab.chevalier.moviedb.data.api.response.GetAllMoviePopularResponses
 import retrofit2.http.GET
 import retrofit2.http.Query
 
