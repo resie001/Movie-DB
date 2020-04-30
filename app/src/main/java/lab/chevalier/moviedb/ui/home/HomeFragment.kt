@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import lab.chevalier.moviedb.R
 import lab.chevalier.moviedb.adapter.MovieAllAdapter
@@ -51,6 +52,15 @@ class HomeFragment : Fragment() {
 
     private fun navigate( data : Result ){
         requireView().findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(data))
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.main_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController()) || super.onOptionsItemSelected(item)
     }
 
 }
