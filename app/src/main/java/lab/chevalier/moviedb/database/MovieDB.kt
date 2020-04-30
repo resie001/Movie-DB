@@ -7,9 +7,10 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
+import lab.chevalier.moviedb.api.response.Result
 import lab.chevalier.moviedb.worker.MovieAllWorker
 
-@Database(entities = [Movie::class], version = 1, exportSchema = false)
+@Database(entities = [Result::class], version = 1, exportSchema = false)
 abstract class MovieDB : RoomDatabase() {
 
     abstract fun movieDao() : MovieDao

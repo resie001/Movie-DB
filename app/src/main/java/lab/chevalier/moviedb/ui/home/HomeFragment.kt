@@ -35,8 +35,6 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
-        context ?: return binding.root
-
         val adapter = MovieAllAdapter(requireContext())
         binding.rvMovie.apply {
             this.adapter = adapter
@@ -48,6 +46,7 @@ class HomeFragment : Fragment() {
 
     private fun subcribeUI(movieAllAdapter: MovieAllAdapter){
         homeViewModel.movies.observe(viewLifecycleOwner, Observer {
+            Log.e("HomeFragment Success", it.toString())
             movieAllAdapter.listData = it
         })
     }

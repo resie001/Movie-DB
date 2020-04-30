@@ -1,33 +1,21 @@
 package lab.chevalier.moviedb.api.response
 
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-import lab.chevalier.moviedb.database.Movie
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.google.gson.annotations.SerializedName
 
-@JsonClass(generateAdapter = true)
+@Entity(tableName = "tbl_movie")
 data class Result(
-    @Json(name = "adult")
-    val adult: Boolean = false,
-    @Json(name = "backdrop_path")
-    val backdropPath: String? = "",
-    @Json(name = "id")
-    val id: Int = 0,
-    @Json(name = "original_language")
-    val originalLanguage: String = "",
-    @Json(name = "original_title")
-    val originalTitle: String = "",
-    @Json(name = "overview")
-    val overview: String = "",
-    @Json(name = "popularity")
-    val popularity: Double = 0.0,
-    @Json(name = "poster_path")
-    val posterPath: String = "",
-    @Json(name = "title")
-    val title: String = "",
-    @Json(name = "video")
-    val video: Boolean = false,
-    @Json(name = "vote_average")
-    val voteAverage: Int = 0,
-    @Json(name = "vote_count")
-    val voteCount: Int = 0
+    val adult: Boolean,
+    val backdrop_path: String,
+    @PrimaryKey
+    val id: Int,
+    val original_language: String,
+    val original_title: String,
+    val overview: String,
+    val popularity: Double,
+    val poster_path: String,
+    val release_date: String,
+    val title: String,
+    val video: Boolean
 )
