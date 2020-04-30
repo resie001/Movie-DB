@@ -18,7 +18,11 @@
         android:id="@+id/detailFragment"
         android:name="lab.chevalier.moviedb.ui.detail.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="data"
+            app:argType="lab.chevalier.moviedb.api.response.Result" />
+    </fragment>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="lab.chevalier.moviedb.ui.about.AboutFragment"

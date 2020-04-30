@@ -12,7 +12,4 @@ class HomeViewModel internal constructor(
 
     val movies : LiveData<List<Result>> = homeRepository.getAllMovie()
 
-    init {
-        Log.e("HomeViewModel Success", movies.toString())
-    }
 }

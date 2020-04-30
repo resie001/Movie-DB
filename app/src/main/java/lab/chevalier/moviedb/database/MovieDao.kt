@@ -13,7 +13,7 @@ interface MovieDao {
     @Query("SELECT * FROM tbl_movie")
     fun getAllMovie() : LiveData<List<Result>>
 
-    @Insert(onConflict = OnConflictStrategy.ABORT)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(movie : Result)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

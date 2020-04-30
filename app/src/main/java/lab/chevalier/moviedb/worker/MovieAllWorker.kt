@@ -17,31 +17,10 @@ class MovieAllWorker(
     override suspend fun doWork(): Result = coroutineScope {
         try {
             val listMovie = BaseApi().services.getAllPopular(Constanta.apiKey).await()
-//            BaseApi().services.getAllPopular(Constanta.apiKey)
-//                .enqueue(object : Callback<GetAllMoviePopularResponses> {
-//                    override fun onFailure(call: Call<GetAllMoviePopularResponses>, t: Throwable) {
-//                        Log.e("MovieAllWorker", t.toString())
-//                    }
-//
-//                    override fun onResponse(
-//                        call: Call<GetAllMoviePopularResponses>,
-//                        response: Response<GetAllMoviePopularResponses>
-//                    ) {
-//                        if (response.isSuccessful){
-//                            response.body()?.let { listData.addAll(it.results) }
-//                            for (item in listData){
-//                                listMovie.add(Converter.toMovie(item))
-//                            }
-//
-//                        }
-//                    }
-//                })
             val database = MovieDB.getInstance(applicationContext)
             database.movieDao().insertAll(listMovie.results)
-            Log.e("MovieAllWorker Success", listMovie.toString())
             Result.success()
         } catch (ex: Exception) {
-            Log.e("MovieAllWorker Failed", ex.toString())
             Result.failure()
         }
     }

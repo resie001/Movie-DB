@@ -11,7 +11,7 @@ import lab.chevalier.moviedb.api.response.Result
 import lab.chevalier.moviedb.databinding.ItemMovieBinding
 import lab.chevalier.moviedb.utilities.Constanta
 
-class MovieAllAdapter(val context: Context) : RecyclerView.Adapter<MovieAllAdapter.MovieViewHolder>() {
+class MovieAllAdapter(val context: Context, val clickListener : (Result) -> Unit) : RecyclerView.Adapter<MovieAllAdapter.MovieViewHolder>() {
 
     var listData : List<Result> = mutableListOf()
         set(value) {
@@ -21,6 +21,7 @@ class MovieAllAdapter(val context: Context) : RecyclerView.Adapter<MovieAllAdapt
 
     inner class MovieViewHolder(val binding: ItemMovieBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(data : Result){
+            binding.root.setOnClickListener { clickListener(data) }
             binding.tvTitle.text = data.original_title
             binding.tvOverview.text = data.overview
             Glide.with(context)
