@@ -12,7 +12,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import lab.chevalier.moviedb.R
 import lab.chevalier.moviedb.adapter.MovieAllAdapter
-import lab.chevalier.moviedb.data.api.response.Result
+import lab.chevalier.moviedb.data.api.response.Movie
 import lab.chevalier.moviedb.databinding.FragmentHomeBinding
 import lab.chevalier.moviedb.utilities.Injectors
 
@@ -34,7 +34,7 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         setHasOptionsMenu(true)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
-        val adapter = MovieAllAdapter(requireContext()) { result: Result -> navigate(result) }
+        val adapter = MovieAllAdapter(requireContext()) { movie: Movie -> navigate(movie) }
         binding.rvMovie.apply {
             this.adapter = adapter
             this.layoutManager = LinearLayoutManager(requireContext())
@@ -50,7 +50,7 @@ class HomeFragment : Fragment() {
         })
     }
 
-    private fun navigate( data : Result){
+    private fun navigate( data : Movie){
         requireView().findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(data))
     }
 

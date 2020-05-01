@@ -21,7 +21,7 @@
         tools:layout="@layout/fragment_detail" >
         <argument
             android:name="data"
-            app:argType="lab.chevalier.moviedb.data.api.response.Result" />
+            app:argType="lab.chevalier.moviedb.data.api.response.Movie" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"

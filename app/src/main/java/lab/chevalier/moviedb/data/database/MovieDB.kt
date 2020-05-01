@@ -9,10 +9,10 @@ import androidx.work.Constraints
 import androidx.work.NetworkType
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
-import lab.chevalier.moviedb.data.api.response.Result
+import lab.chevalier.moviedb.data.api.response.Movie
 import lab.chevalier.moviedb.worker.MovieAllWorker
 
-@Database(entities = [Result::class], version = 1, exportSchema = false)
+@Database(entities = [Movie::class], version = 1, exportSchema = false)
 abstract class MovieDB : RoomDatabase() {
 
     abstract fun movieDao() : MovieDao
@@ -36,6 +36,7 @@ abstract class MovieDB : RoomDatabase() {
                 .addCallback(object : RoomDatabase.Callback(){
                     override fun onCreate(db: SupportSQLiteDatabase) {
                         super.onCreate(db)
+
                         val request = OneTimeWorkRequestBuilder<MovieAllWorker>()
                             .setConstraints(Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build())
                             .build()

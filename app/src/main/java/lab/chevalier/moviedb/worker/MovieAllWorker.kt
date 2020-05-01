@@ -1,7 +1,6 @@
 package lab.chevalier.moviedb.worker
 
 import android.content.Context
-import android.util.Log
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import kotlinx.coroutines.coroutineScope
@@ -16,7 +15,7 @@ class MovieAllWorker(
 ) : CoroutineWorker(context, workerParameters) {
     override suspend fun doWork(): Result = coroutineScope {
         try {
-            val listMovie = BaseApi().services.getAllPopular(Constanta.apiKey).await()
+            val listMovie = BaseApi().services.getAllPopularAsync(Constanta.apiKey).await()
             val database = MovieDB.getInstance(applicationContext)
             database.movieDao().insertAll(listMovie.results)
             Result.success()

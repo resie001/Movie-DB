@@ -7,7 +7,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 @Entity(tableName = "tbl_movie")
-data class Result(
+data class Movie(
     val adult: Boolean,
     val backdrop_path: String,
     @PrimaryKey

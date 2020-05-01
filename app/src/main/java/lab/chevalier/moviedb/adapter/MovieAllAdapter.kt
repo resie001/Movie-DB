@@ -7,20 +7,20 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import lab.chevalier.moviedb.R
-import lab.chevalier.moviedb.data.api.response.Result
+import lab.chevalier.moviedb.data.api.response.Movie
 import lab.chevalier.moviedb.databinding.ItemMovieBinding
 import lab.chevalier.moviedb.utilities.Constanta
 
-class MovieAllAdapter(val context: Context, val clickListener : (Result) -> Unit) : RecyclerView.Adapter<MovieAllAdapter.MovieViewHolder>() {
+class MovieAllAdapter(val context: Context, val clickListener : (Movie) -> Unit) : RecyclerView.Adapter<MovieAllAdapter.MovieViewHolder>() {
 
-    var listData : List<Result> = mutableListOf()
+    var listData : List<Movie> = mutableListOf()
         set(value) {
             field = value
             notifyDataSetChanged()
         }
 
     inner class MovieViewHolder(val binding: ItemMovieBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(data : Result){
+        fun bind(data : Movie){
             binding.root.setOnClickListener { clickListener(data) }
             binding.tvTitle.text = data.original_title
             binding.tvOverview.text = data.overview
