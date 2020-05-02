@@ -19,4 +19,7 @@ interface MovieDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(movies : List<Movie>)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun reload(movies : List<Movie>)
+
 }

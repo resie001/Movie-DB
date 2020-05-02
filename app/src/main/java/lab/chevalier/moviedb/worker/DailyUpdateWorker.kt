@@ -45,11 +45,10 @@ class DailyUpdateWorker(
                 override fun onResponse(call: Call<Movie>, response: Response<Movie>) {
                     if (response.isSuccessful){
                         response.body()?.let { database.movieDao().insert(it) }
+                        Log.e("DailyWorker Success", "berhasil")
                     }
                 }
             })
-
-            Log.e("DailyWorker Success", "berhasil")
             WorkManager.getInstance().enqueue(dailyworker)
             return Result.success()
         } catch (ex : Exception){

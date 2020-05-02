@@ -1,6 +1,7 @@
 package lab.chevalier.moviedb.worker
 
 import android.content.Context
+import android.widget.Toast
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import kotlinx.coroutines.coroutineScope
@@ -20,6 +21,7 @@ class MovieAllWorker(
             database.movieDao().insertAll(listMovie.results)
             Result.success()
         } catch (ex: Exception) {
+            Toast.makeText(applicationContext, "Tidak Ada Internet", Toast.LENGTH_SHORT).show()
             Result.failure()
         }
     }
